@@ -1,0 +1,22 @@
+{
+    "name": "ballen/powergate-client",
+    "description": "A PHP client for manipulating a master PowerDNS server using the Powergate API.",  
+    "keywords": ["powerdns", "powergate", "dns"],
+    "homepage": "https://github.com/bobsta63/powergate-php-client",
+    "license": "GPLv3",    
+    "authors": [
+        {
+            "name": "Bobby Allen",
+            "email": "ballen@bobbyallen.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "guzzle/guzzle": "v3.8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ballen\\PowergateClient\\": "src/"
+        }
+    }
+}
