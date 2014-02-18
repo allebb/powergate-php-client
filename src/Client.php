@@ -3,6 +3,7 @@
 namespace Ballen\PowergateClient;
 
 use Guzzle\Http\Client as GuzzleClient;
+use Guzzle\Http\Exception\ClientErrorResponseException;
 
 class Client
 {
@@ -13,9 +14,16 @@ class Client
      */
     protected $client;
 
-    public function __construct($baseUrl, $user, $key)
+    /**
+     * Initiates a new Powergate Client object.
+     * @param type $baseUrl The base URL of the API (including trailing slash)
+     * @param type $user The Powergate API user
+     * @param type $key The Powergate API key
+     * @param type $options Optional Guzzle HTTP Client configuration such as proxy server configuration etc. (see http://guzzle.readthedocs.org/en/latest/http-client/client.html#configuration-options)
+     */
+    public function __construct($baseUrl, $user, $key, $options = null)
     {
-        $this->client = new GuzzleClient($baseUrl);
+        $this->client = new GuzzleClient($baseUrl, $options);
         $this->client->setDefaultOption('auth', array($user, $key));
     }
 
@@ -29,7 +37,7 @@ class Client
             $response = $this->client->get('domains')->send();
             return $response->getBody();
         } catch (ClientErrorResponseException $e) {
-            var_dump($e);
+            return $this->handleException($e);
         }
         return $response->getBody();
     }
@@ -44,7 +52,7 @@ class Client
             $response = $this->client->get('records')->send();
             return $response->getBody();
         } catch (ClientErrorResponseException $e) {
-            var_dump($e);
+            return $this->handleException($e);
         }
     }
 
@@ -59,7 +67,7 @@ class Client
             $response = $this->client->get("domains/$id/records")->send();
             return $response->getBody();
         } catch (ClientErrorResponseException $e) {
-            var_dump($e);
+            return $this->handleException($e);
         }
     }
 
@@ -74,8 +82,18 @@ class Client
             $response = $this->client->get("records/$id/domain")->send();
             return $response->getBody();
         } catch (ClientErrorResponseException $e) {
-            var_dump($e);
+            return $this->handleException($e);
         }
+    }
+
+    /**
+     * Handles and dispatches Powergate client specific exceptions.
+     * @param  $ex Exception
+     * @param Guzzle\Http\Client $response
+     */
+    private function handleException($exception)
+    {
+        var_dump($exception->getMessage());
     }
 
 }
