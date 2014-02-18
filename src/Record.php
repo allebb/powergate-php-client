@@ -2,14 +2,14 @@
 
 namespace Ballen\PowergateClient;
 
-use Ballen\PowergateClient\Services\Client;
+use Ballen\PowergateClient\Services\PowergateClient;
 
-class Record extends Client
+class Record extends PowergateClient
 {
 
     public function find($id)
     {
-        return json_decode($this->getRecord($id))->record;
+        return $this->getRecord($id)->record;
     }
 
     public function create(array $array)

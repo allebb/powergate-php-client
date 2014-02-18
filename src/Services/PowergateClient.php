@@ -11,7 +11,7 @@ use Ballen\PowergateClient\Exceptions\ProxyAuthorisationAPIException;
 use Ballen\PowergateClient\Exceptions\ServerErrorException;
 use \Exception;
 
-class Client
+class PowergateClient
 {
 
     /**

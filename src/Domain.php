@@ -2,9 +2,9 @@
 
 namespace Ballen\PowergateClient;
 
-use Ballen\PowergateClient\Services\Client;
+use Ballen\PowergateClient\Services\PowergateClient;
 
-class Domain extends Client
+class Domain extends PowergateClient
 {
 
     public function find($id)
