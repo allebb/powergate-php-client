@@ -1,5 +1,7 @@
 <?php
 
+namespace Ballen\PowergateClient;
+
 use Illumate\Support\ServiceProvider;
 use Ballen\PowergateClient\Domain;
 use Ballen\PowergateClient\Record;
