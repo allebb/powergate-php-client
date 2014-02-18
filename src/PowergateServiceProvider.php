@@ -2,7 +2,7 @@
 
 namespace Ballen\PowergateClient;
 
-use Illumate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Ballen\PowergateClient\Domain;
 use Ballen\PowergateClient\Record;
 use Config;
