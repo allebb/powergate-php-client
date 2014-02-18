@@ -11,7 +11,7 @@ Powergate PHP Client is an API client library which is designed to talk to a Pow
 
 Powergate PHP client is installable with Composer. Read further information on how to install.
 
-* [Installing Powergate PHP Client](INSTALL.md)
+* [Installing Powergate PHP Client](docs/INSTALL.md)
 * [Laravel 4 Integration](docs/LARAVEL-INTEGRATION.md)
 
 ## Documentation
