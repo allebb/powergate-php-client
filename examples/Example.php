@@ -45,3 +45,5 @@ foreach ($records->all() as $record) {
 //}
 
 $domains->update(5, ['type' => 'master']);
+
+$domains->commitSOAChanges(5);

@@ -178,6 +178,24 @@ class Client
     }
 
     /**
+     * Updates a record by ID with updated data from the given array.
+     * @param int $id The ID of the record of which to update.
+     * @param array $array Array of data of which to be updated.
+     * @return type
+     */
+    public function updateRecord($id, array $array)
+    {
+        try {
+            $response = $this->client->put('records/' . $id, [], $array)->send();
+        } catch (ClientErrorResponseException $e) {
+            return $this->handleException($e);
+        } catch (Exception $e) {
+            return $this->handleException($e);
+        }
+        return json_decode($response->getBody());
+    }
+    
+    /**
      * Deletes a record from its ID.
      * @param int $id The record ID as returned from the API.
      * @return type

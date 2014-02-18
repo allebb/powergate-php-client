@@ -33,4 +33,19 @@ class Domain extends Client
         return $this->deleteDomain($id);
     }
 
+    public function commitSOAChanges($id)
+    {
+        $records = $this->getRecords()->records;
+        foreach ($records as $record) {
+            if ($record->type == 'SOA') {
+                $soa = $record;
+                break;
+            }
+        }
+        $soa_parts = explode(' ', $soa->content);
+        $incremented = (int) $soa_parts[2] + 1;
+        $new_soa = implode(' ', array_replace($soa_parts, ['2' => $incremented]));
+        $this->updateRecord($id, $array);
+    }
+
 }

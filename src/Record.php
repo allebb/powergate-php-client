@@ -33,9 +33,4 @@ class Record extends Client
         return $this->deleteRecord($id);
     }
 
-    public function commitSOAChanges()
-    {
-
-    }
-
 }
