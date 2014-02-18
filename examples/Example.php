@@ -2,14 +2,44 @@
 
 require_once '../vendor/autoload.php';
 
-use Ballen\PowergateClient\Client;
+use Ballen\PowergateClient\Domain;
+use Ballen\PowergateClient\Record;
 
+// Optionally you can set additional settings such as proxy server credentials (See Guzzle documentation!)
 $options = [];
 
-$client = new Client('http://extra.bobbyallen.me/', 'api', '__KEY_GOES_HERE__', $options);
+// Set standard API connection details and credentials...
+$api = [
+    'server' => 'http://extra.bobbyallen.me/',
+    'user' => 'api',
+    'key' => '__KEY_GOES_HERE__',
+];
 
-//echo $client->getRecords();
+$domains = new Domain($api['server'], $api['user'], $api['key'], $options);
 
-//echo $client->getRecord(4);
 
-echo $client->getDomain(1);
+//$domains->create(
+//    [
+//       'name' => 'ginga.com',
+//       'type' => 'MASTER'
+//   ])->getBody();
+
+foreach ($domains->all() as $domain) {
+    echo "- $domain->name <br>";
+}
+
+//$domain = $domains->find(1);
+//echo var_dump($domain);
+
+
+$records = new Record($api['server'], $api['user'], $api['key'], $options);
+
+//var_dump($records->all());
+
+foreach ($records->all() as $record) {
+    echo "> $record->name is a $record->type record and has a target of $record->content. <br>";
+}
+
+if ($domains->delete(99)) {
+    echo "Done!";
+}
