@@ -22,9 +22,10 @@ class Domain extends Client
         return $this->getDomains()->domains;
     }
 
-    public function update(array $array)
+    public function update($id, array $array)
     {
-        
+        $existing = json_decode(json_encode($this->find($id)), true);
+        return $this->updateDomain($id, array_merge($existing, $array))->domain;
     }
 
     public function delete($id)

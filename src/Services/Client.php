@@ -106,6 +106,24 @@ class Client
     }
 
     /**
+     * Updates a domain by ID with updated data from the given array.
+     * @param int $id The ID of the domain of which to update.
+     * @param array $array Array of data of which to be updated.
+     * @return type
+     */
+    public function updateDomain($id, array $array)
+    {
+        try {
+            $response = $this->client->put('domains/' . $id, [], $array)->send();
+        } catch (ClientErrorResponseException $e) {
+            return $this->handleException($e);
+        } catch (Exception $e) {
+            return $this->handleException($e);
+        }
+        return json_decode($response->getBody());
+    }
+
+    /**
      * Deletes a domain from its ID.
      * @param int $id The domain ID as returned from the API.
      * @return type
@@ -158,7 +176,6 @@ class Client
         }
         return json_decode($response->getBody());
     }
-
 
     /**
      * Deletes a record from its ID.

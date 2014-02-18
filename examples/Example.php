@@ -40,6 +40,8 @@ foreach ($records->all() as $record) {
     echo "> $record->name is a $record->type record and has a target of $record->content. <br>";
 }
 
-if ($domains->delete(99)) {
-    echo "Done!";
-}
+//if ($records->delete(99)) {
+//    echo "Done!";
+//}
+
+$domains->update(5, ['type' => 'master']);

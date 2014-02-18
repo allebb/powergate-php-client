@@ -22,9 +22,10 @@ class Record extends Client
         return $this->getRecords()->records;
     }
 
-    public function update(array $array)
+    public function update($id, array $array)
     {
-        
+        $existing = json_decode(json_encode($this->find($id)), true);
+        return $this->updateRecord($id, array_merge($existing, $array))->record;
     }
 
     public function delete($id)
