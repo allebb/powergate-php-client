@@ -194,7 +194,7 @@ class Client
         }
         return json_decode($response->getBody());
     }
-    
+
     /**
      * Deletes a record from its ID.
      * @param int $id The record ID as returned from the API.
@@ -209,6 +209,26 @@ class Client
         } catch (Exception $e) {
             return $this->handleException($e);
         }
+    }
+
+    /**
+     * Generates a valid RFC1912 2.2 specific DNS Serial number or will increment if an existing one is provided otherwise a new one will be generated.
+     * @param int $current Optional serial number of which will be automatically incremented if provided.
+     * @return int
+     * @throws SoaOutOfRangeException
+     */
+    protected function generateSOASerial($current = null)
+    {
+        if (!$current) {
+            $serial = date('Ymd') . '00';
+        } else {
+            $increment = str_pad(substr($current, 8, 2) + 1, 2, 0, STR_PAD_LEFT);
+            if ($increment <= 99) {
+                return date('Ymd') . $increment;
+            }
+            throw new SoaOutOfRangeException;
+        }
+        return $serial;
     }
 
     /**

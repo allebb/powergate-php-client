@@ -44,6 +44,8 @@ foreach ($records->all() as $record) {
 //    echo "Done!";
 //}
 
-$domains->update(5, ['type' => 'master']);
+//$domains->update(5, ['type' => 'master']);
 
-$domains->commitSOAChanges(5);
+var_dump($domains->commitSerialUpdate(1));
+
+//$domains->commitSOAChanges();
