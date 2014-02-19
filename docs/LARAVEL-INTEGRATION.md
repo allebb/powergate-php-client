@@ -20,7 +20,14 @@ Then add the new facades to the `$aliases` array like to:
 You should now also create a configuration file for Powergate, this contains your API server URL, API user and key. Create a new configuration file in `app/confg/powergate.php` with the following content:
 
 ```php
+<?php
 
+return array(
+    'api' => array(
+        'baseUrl' => 'http://api.yourserver.com/',
+        'user' => 'api',
+        'key' => '__KEY_GOES_HERE__',
+    ));
 ```
 
 Obviously, you should update the values in the above example with your own Powergate Server credentials.
@@ -49,6 +56,16 @@ You can update an IP address of an 'A' record like so:
 ```php
 $updated_ip = '188.23.12.90';
 
+$updated = Record::update(1, array('content' => $updated_ip));
 
-
+if(!$updated->errors)
+{
+    echo "Record updated successfully!";
+    // We'll increment the SOA serial
+    Domain::commitSerialUpdate($updated->record->domain_id);
+} else {
+    echo "Something went wrong, the API responded with the following error: $updated->message." ;
+}
 ```
+
+For more information with regards to the available class methods please see the [documentation](INDEX.md).
