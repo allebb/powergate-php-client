@@ -38,20 +38,20 @@ Congratulations, the Powergate Client should now be auto-loaded by Laravel!
 
 Once you have configured the Powergate Client for Laravel you can access your DNS Domain and Records like so:-
 
-You can get a list of all of your configured domains like this:
+You can use the Laravel helper function `dd()` aka. die and dump a list of all of your configured domains like this:
 
 ```php
-$all_domains = Domains::all();
+dd(Domain::all());
 ```
 
 Once you have obtained the Domain ID you can then request that domain including all records, this then enables you to retrieve the required record ID in order to push an update as shown in the exmaple below.
 
 ```php
-$domain = Domain::find(1);
-
+// Return the domain details and all child records for the domain with an ID of `1`.
+dd(Domain::find(1));
 ```
 
-You can update an IP address of an 'A' record like so:
+In this example we will update an IP address of an 'A' record (with an ID of `1`) like so:
 
 ```php
 $updated_ip = '188.23.12.90';
