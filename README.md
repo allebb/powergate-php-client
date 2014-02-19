@@ -5,7 +5,7 @@ Powergate PHP Client is an API client library which is designed to talk to a Pow
 ## Requirements
 
 * PHP >= 5.4.0
-* cURL >= ???
+* cURL
 
 ## Installation
 
