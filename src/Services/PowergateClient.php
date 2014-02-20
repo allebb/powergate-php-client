@@ -55,7 +55,7 @@ class PowergateClient
      * Return all records currently configured on the PowerGate API server.
      * @throws Guzzle\Http\Exception\ClientErrorResponseException
      * @throws Exception
-     * @return type
+     * @return stdClass
      */
     public function getRecords()
     {
@@ -72,7 +72,7 @@ class PowergateClient
      * @param int $id The domain ID of which to fetch.
      * @throws Guzzle\Http\Exception\ClientErrorResponseException
      * @throws Exception
-     * @return type
+     * @return stdClass
      */
     public function getDomain($id)
     {
@@ -91,7 +91,7 @@ class PowergateClient
      * @param array $array
      * @throws Guzzle\Http\Exception\ClientErrorResponseException
      * @throws Exception
-     * @return type
+     * @return stdClass
      */
     public function createDomain(array $array)
     {
@@ -109,7 +109,7 @@ class PowergateClient
      * Updates a domain by ID with updated data from the given array.
      * @param int $id The ID of the domain of which to update.
      * @param array $array Array of data of which to be updated.
-     * @return type
+     * @return stdClass
      */
     public function updateDomain($id, array $array)
     {
@@ -126,7 +126,7 @@ class PowergateClient
     /**
      * Deletes a domain from its ID.
      * @param int $id The domain ID as returned from the API.
-     * @return type
+     * @return stdClass
      */
     public function deleteDomain($id)
     {
@@ -144,7 +144,7 @@ class PowergateClient
      * @param int $id The ID of the record of which to fetch.
      * @throws Guzzle\Http\Exception\ClientErrorResponseException
      * @throws Exception
-     * @return type
+     * @return stdClass
      */
     public function getRecord($id)
     {
@@ -163,7 +163,7 @@ class PowergateClient
      * @param array $array
      * @throws Guzzle\Http\Exception\ClientErrorResponseException
      * @throws Exception
-     * @return type
+     * @return stdClass
      */
     public function createRecord(array $array)
     {
@@ -181,7 +181,7 @@ class PowergateClient
      * Updates a record by ID with updated data from the given array.
      * @param int $id The ID of the record of which to update.
      * @param array $array Array of data of which to be updated.
-     * @return type
+     * @return stdClass
      */
     public function updateRecord($id, array $array)
     {
@@ -198,7 +198,7 @@ class PowergateClient
     /**
      * Deletes a record from its ID.
      * @param int $id The record ID as returned from the API.
-     * @return type
+     * @return stdClass
      */
     public function deleteRecord($id)
     {
@@ -209,6 +209,7 @@ class PowergateClient
         } catch (Exception $e) {
             return $this->handleException($e);
         }
+        return json_decode($response->getBody());
     }
 
     /**
@@ -235,6 +236,11 @@ class PowergateClient
      * Handles and dispatches Powergate client specific exceptions.
      * @param  $ex Exception
      * @param Guzzle\Http\Client $response
+     * @throws ValidationAPIException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ProxyAuthorisationAPIException
+     * @throws ServerErrorException
      */
     private function handleException(ClientErrorResponseException $exception)
     {
