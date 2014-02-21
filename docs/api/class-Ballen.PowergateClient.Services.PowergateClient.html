@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Ballen\PowergateClient\Services\PowergateClient | Powergate Client</title>
+
+	<script type="text/javascript" src="resources/combined.js?139574267"></script>
+	<script type="text/javascript" src="elementlist.js?69159781"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-Ballen.html">Ballen<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-Ballen.PowergateClient.html">PowergateClient<span></span></a>
+						<ul>
+				<li><a href="namespace-Ballen.PowergateClient.Exceptions.html">Exceptions</a>
+						</li>
+				<li><a href="namespace-Ballen.PowergateClient.Facades.html">Facades</a>
+						</li>
+				<li class="active"><a href="namespace-Ballen.PowergateClient.Services.html">Services</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-Composer.html">Composer<span></span></a>
+						<ul>
+				<li><a href="namespace-Composer.Autoload.html">Autoload</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.html">Guzzle<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Batch.html">Batch<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Batch.Exception.html">Exception</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Cache.html">Cache</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.html">Common<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Http.html">Http<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Message.html">Message<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.Message.Header.html">Header</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Http.QueryAggregator.html">QueryAggregator</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Inflection.html">Inflection</a>
+						</li>
+				<li><a href="namespace-Guzzle.Iterator.html">Iterator</a>
+						</li>
+				<li><a href="namespace-Guzzle.Log.html">Log</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Parser.Cookie.html">Cookie</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Plugin.html">Plugin<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Plugin.Async.html">Async</a>
+						</li>
+				<li><a href="namespace-Guzzle.Plugin.Backoff.html">Backoff</a>
+						</li>
+				<li><a href="namespace-Guzzle.Plugin.Cache.html">Cache</a>
+						</li>
+				<li><a href="namespace-Guzzle.Plugin.Cookie.html">Cookie<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Plugin.Cookie.CookieJar.html">CookieJar</a>
+						</li>
+				<li><a href="namespace-Guzzle.Plugin.Cookie.Exception.html">Exception</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Plugin.ErrorResponse.html">ErrorResponse<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Plugin.ErrorResponse.Exception.html">Exception</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Plugin.History.html">History</a>
+						</li>
+				<li><a href="namespace-Guzzle.Plugin.Log.html">Log</a>
+						</li>
+				<li><a href="namespace-Guzzle.Plugin.Md5.html">Md5</a>
+						</li>
+				<li><a href="namespace-Guzzle.Plugin.Mock.html">Mock</a>
+						</li>
+				<li><a href="namespace-Guzzle.Plugin.Oauth.html">Oauth</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Command.html">Command<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Service.Command.Factory.html">Factory</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Command.LocationVisitor.html">LocationVisitor<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Service.Command.LocationVisitor.Request.html">Request</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Command.LocationVisitor.Response.html">Response</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Resource.html">Resource</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Stream.html">Stream</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.html">Tests<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Batch.html">Batch</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Cache.html">Cache</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Common.html">Common<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Common.Cache.html">Cache</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Common.Exception.html">Exception</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Tests.Http.html">Http<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Http.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Http.Message.html">Message<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Http.Message.Header.html">Header</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-Guzzle.Tests.Inflection.html">Inflection</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Iterator.html">Iterator</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Log.html">Log</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Mock.html">Mock</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Parser.Cookie.html">Cookie</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Parser.Message.html">Message</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Tests.Parsers.html">Parsers<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Parsers.UriTemplate.html">UriTemplate</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.html">Plugin<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Plugin.Async.html">Async</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.Backoff.html">Backoff</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.Cache.html">Cache</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.Cookie.html">Cookie<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Plugin.Cookie.CookieJar.html">CookieJar</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.CurlAuth.html">CurlAuth</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.ErrorResponse.html">ErrorResponse</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.History.html">History</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.Log.html">Log</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.Md5.html">Md5</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.Mock.html">Mock</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.Oauth.html">Oauth</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Plugin.Redirect.html">Redirect</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Tests.Service.html">Service<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Service.Builder.html">Builder</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Service.Command.html">Command<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Service.Command.LocationVisitor.html">LocationVisitor<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Service.Command.LocationVisitor.Request.html">Request</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Service.Command.LocationVisitor.Response.html">Response</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-Guzzle.Tests.Service.Description.html">Description</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Service.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-Guzzle.Tests.Service.Mock.html">Mock<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Service.Mock.Command.html">Command<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Tests.Service.Mock.Command.Sub.html">Sub</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Tests.Service.Mock.Model.html">Model</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Tests.Service.Resource.html">Resource</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Tests.Stream.html">Stream</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-Symfony.html">Symfony<span></span></a>
+						<ul>
+				<li><a href="namespace-Symfony.Component.html">Component<span></span></a>
+						<ul>
+				<li><a href="namespace-Symfony.Component.EventDispatcher.html">EventDispatcher<span></span></a>
+						<ul>
+				<li><a href="namespace-Symfony.Component.EventDispatcher.Debug.html">Debug</a>
+						</li>
+				<li><a href="namespace-Symfony.Component.EventDispatcher.Tests.html">Tests</a>
+						</li>
+							</ul></li></ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Ballen.PowergateClient.Services.PowergateClient.html">PowergateClient</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Ballen.PowergateClient.Services.html" title="Summary of Ballen\PowergateClient\Services"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class PowergateClient</h1>
+
+
+
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Ballen.PowergateClient.Domain.html">Ballen\PowergateClient\Domain</a>, 
+			<a href="class-Ballen.PowergateClient.Record.html">Ballen\PowergateClient\Record</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Ballen.html">Ballen</a>\<a href="namespace-Ballen.PowergateClient.html">PowergateClient</a>\<a href="namespace-Ballen.PowergateClient.Services.html">Services</a><br />
+		
+
+		<b>Located at</b> <a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#14-261" title="Go to source code">src/Services/PowergateClient.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#23-34" title="Go to source code">__construct</a>( <span>string <var>$baseUrl</var></span>, <span>string <var>$user</var></span>, <span>string <var>$key</var></span>, <span>array <var>$options</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Initiates a new Powergate Client object.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Initiates a new Powergate Client object.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$baseUrl</var></dt>
+					<dd><code>string</code><br>$baseUrl The base URL of the API (including trailing slash)</dd>
+					<dt><var>$user</var></dt>
+					<dd><code>string</code><br>$user The Powergate API user</dd>
+					<dt><var>$key</var></dt>
+					<dd><code>string</code><br>$key The Powergate API key</dd>
+					<dt><var>$options</var></dt>
+					<dd><code>array</code><br>$options Optional Guzzle HTTP Client configuration such as proxy server
+configuration etc. (see <a
+href="http://guzzle.readthedocs.org/en/latest/http-client/client.html#configuration-options">http://guzzle.readthedocs.org/en/latest/http-client/client.html#configuration-options</a>)</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDomains" id="_getDomains">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-stdClass.html">stdClass</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDomains">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#36-52" title="Go to source code">getDomains</a>( )</code>
+
+		<div class="description short">
+			
+<p>Return all domains currently configured on the PowerGate API server.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Return all domains currently configured on the PowerGate API server.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-stdClass.html">stdClass</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">Guzzle\Http\Exception\ClientErrorResponseException</a></code></code><br />
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRecords" id="_getRecords">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-stdClass.html">stdClass</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRecords">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#54-68" title="Go to source code">getRecords</a>( )</code>
+
+		<div class="description short">
+			
+<p>Return all records currently configured on the PowerGate API server.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Return all records currently configured on the PowerGate API server.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-stdClass.html">stdClass</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">Guzzle\Http\Exception\ClientErrorResponseException</a></code></code><br />
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDomain" id="_getDomain">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-stdClass.html">stdClass</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDomain">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#70-87" title="Go to source code">getDomain</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Return a specific domain including it's child records.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Return a specific domain including it's child records.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><code>integer</code><br>$id The domain ID of which to fetch.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-stdClass.html">stdClass</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">Guzzle\Http\Exception\ClientErrorResponseException</a></code></code><br />
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createDomain" id="_createDomain">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-stdClass.html">stdClass</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createDomain">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#89-106" title="Go to source code">createDomain</a>( <span>array <var>$array</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Creates a new domain record from an array</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Creates a new domain record from an array</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd><code>array</code><br>$array</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-stdClass.html">stdClass</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">Guzzle\Http\Exception\ClientErrorResponseException</a></code></code><br />
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="updateDomain" id="_updateDomain">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-stdClass.html">stdClass</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_updateDomain">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#108-124" title="Go to source code">updateDomain</a>( <span>integer <var>$id</var></span>, <span>array <var>$array</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Updates a domain by ID with updated data from the given array.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Updates a domain by ID with updated data from the given array.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><code>integer</code><br>$id The ID of the domain of which to update.</dd>
+					<dt><var>$array</var></dt>
+					<dd><code>array</code><br>$array Array of data of which to be updated.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-stdClass.html">stdClass</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteDomain" id="_deleteDomain">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-stdClass.html">stdClass</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteDomain">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#126-140" title="Go to source code">deleteDomain</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Deletes a domain from its ID.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Deletes a domain from its ID.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><code>integer</code><br>$id The domain ID as returned from the API.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-stdClass.html">stdClass</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRecord" id="_getRecord">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-stdClass.html">stdClass</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRecord">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#142-159" title="Go to source code">getRecord</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Return a specific record from the PowerGate API server.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Return a specific record from the PowerGate API server.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><code>integer</code><br>$id The ID of the record of which to fetch.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-stdClass.html">stdClass</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">Guzzle\Http\Exception\ClientErrorResponseException</a></code></code><br />
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createRecord" id="_createRecord">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-stdClass.html">stdClass</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createRecord">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#161-178" title="Go to source code">createRecord</a>( <span>array <var>$array</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Creates a new DNS record from an array.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Creates a new DNS record from an array.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd><code>array</code><br>$array</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-stdClass.html">stdClass</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">Guzzle\Http\Exception\ClientErrorResponseException</a></code></code><br />
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="updateRecord" id="_updateRecord">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-stdClass.html">stdClass</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_updateRecord">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#180-196" title="Go to source code">updateRecord</a>( <span>integer <var>$id</var></span>, <span>array <var>$array</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Updates a record by ID with updated data from the given array.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Updates a record by ID with updated data from the given array.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><code>integer</code><br>$id The ID of the record of which to update.</dd>
+					<dt><var>$array</var></dt>
+					<dd><code>array</code><br>$array Array of data of which to be updated.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-stdClass.html">stdClass</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteRecord" id="_deleteRecord">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-stdClass.html">stdClass</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteRecord">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#198-213" title="Go to source code">deleteRecord</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Deletes a record from its ID.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Deletes a record from its ID.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><code>integer</code><br>$id The record ID as returned from the API.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-stdClass.html">stdClass</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="generateSOASerial" id="_generateSOASerial">
+
+		<td class="attributes"><code>
+			 protected 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_generateSOASerial">#</a>
+		<code><a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#215-233" title="Go to source code">generateSOASerial</a>( <span>integer <var>$current</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Generates a valid RFC1912 2.2 specific DNS Serial number or will increment if
+an existing one is provided otherwise a new one will be generated.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Generates a valid RFC1912 2.2 specific DNS Serial number or will increment if
+an existing one is provided otherwise a new one will be generated.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$current</var></dt>
+					<dd><code>integer</code><br>$current Optional serial number of which will be automatically incremented if
+provided.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code>SoaOutOfRangeException</code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="client" id="$client">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Ballen.PowergateClient.Services.PowergateClient.html#17-21" title="Go to source code"><var>$client</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$client" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Instance of the Guzzle HTTP client.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Instance of the Guzzle HTTP client.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Powergate Client API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
