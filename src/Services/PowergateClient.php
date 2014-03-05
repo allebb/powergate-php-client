@@ -131,7 +131,7 @@ class PowergateClient
     public function deleteDomain($id)
     {
         try {
-            $response = $this->client->delete('domains/{id}', ['id' => $id])->send();
+            $response = $this->client->delete('domains/'.$id)->send();
         } catch (ClientErrorResponseException $e) {
             return $this->handleException($e);
         } catch (Exception $e) {
@@ -203,7 +203,7 @@ class PowergateClient
     public function deleteRecord($id)
     {
         try {
-            $response = $this->client->delete('records/{id}', ['id' => $id])->send();
+            $response = $this->client->delete('records/'.$id)->send();
         } catch (ClientErrorResponseException $e) {
             return $this->handleException($e);
         } catch (Exception $e) {
