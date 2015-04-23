@@ -4,11 +4,13 @@ namespace Ballen\PowergateClient\Services;
 
 use Guzzle\Http\Client as GuzzleClient;
 use Guzzle\Http\Exception\ClientErrorResponseException;
+use Guzzle\Http\Exception\CurlException;
 use Ballen\PowergateClient\Exceptions\UnauthorisedAccessAPIException;
 use Ballen\PowergateClient\Exceptions\ValidationAPIException;
 use Ballen\PowergateClient\Exceptions\ResourceNotFoundAPIException;
 use Ballen\PowergateClient\Exceptions\ProxyAuthorisationAPIException;
 use Ballen\PowergateClient\Exceptions\ServerErrorException;
+use Ballen\PowergateClient\Exceptions\SoaOutOfRangeException;
 use \Exception;
 
 class PowergateClient
@@ -16,12 +18,13 @@ class PowergateClient
 
     /**
      * Instance of the Guzzle HTTP client.
-     * @var Guzzle\Http\Client
+     * @var GuzzleClient
      */
     protected $client;
 
     /**
      * Initiates a new Powergate Client object.
+     *
      * @param string $baseUrl The base URL of the API (including trailing slash)
      * @param string $user The Powergate API user
      * @param string $key The Powergate API key
@@ -34,10 +37,15 @@ class PowergateClient
     }
 
     /**
+     *
      * Return all domains currently configured on the PowerGate API server.
-     * @throws Guzzle\Http\Exception\ClientErrorResponseException
-     * @throws Exception
-     * @return stdClass
+     *
+     * @return mixed|void
+     * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
     public function getDomains()
     {
@@ -53,9 +61,13 @@ class PowergateClient
 
     /**
      * Return all records currently configured on the PowerGate API server.
-     * @throws Guzzle\Http\Exception\ClientErrorResponseException
-     * @throws Exception
-     * @return stdClass
+     *
+     * @return mixed|void
+     * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
     public function getRecords()
     {
@@ -69,10 +81,14 @@ class PowergateClient
 
     /**
      * Return a specific domain including it's child records.
-     * @param int $id The domain ID of which to fetch.
-     * @throws Guzzle\Http\Exception\ClientErrorResponseException
-     * @throws Exception
-     * @return stdClass
+     *
+     * @param $id
+     * @return mixed|void
+     * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
     public function getDomain($id)
     {
@@ -88,10 +104,14 @@ class PowergateClient
 
     /**
      * Creates a new domain record from an array
+     *
      * @param array $array
-     * @throws Guzzle\Http\Exception\ClientErrorResponseException
-     * @throws Exception
-     * @return stdClass
+     * @return mixed|void
+     * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
     public function createDomain(array $array)
     {
@@ -107,9 +127,15 @@ class PowergateClient
 
     /**
      * Updates a domain by ID with updated data from the given array.
-     * @param int $id The ID of the domain of which to update.
-     * @param array $array Array of data of which to be updated.
-     * @return stdClass
+     *
+     * @param $id
+     * @param array $array
+     * @return mixed|void
+     * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
     public function updateDomain($id, array $array)
     {
@@ -125,13 +151,18 @@ class PowergateClient
 
     /**
      * Deletes a domain from its ID.
-     * @param int $id The domain ID as returned from the API.
-     * @return stdClass
+     *
+     * @param $id
+     * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
     public function deleteDomain($id)
     {
         try {
-            $response = $this->client->delete('domains/'.$id)->send();
+            return $this->client->delete('domains/'.$id)->send();
         } catch (ClientErrorResponseException $e) {
             return $this->handleException($e);
         } catch (Exception $e) {
@@ -141,10 +172,14 @@ class PowergateClient
 
     /**
      * Return a specific record from the PowerGate API server.
-     * @param int $id The ID of the record of which to fetch.
-     * @throws Guzzle\Http\Exception\ClientErrorResponseException
-     * @throws Exception
-     * @return stdClass
+     *
+     * @param $id
+     * @return mixed|void
+     * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
     public function getRecord($id)
     {
@@ -160,10 +195,14 @@ class PowergateClient
 
     /**
      * Creates a new DNS record from an array.
+     *
      * @param array $array
-     * @throws Guzzle\Http\Exception\ClientErrorResponseException
-     * @throws Exception
-     * @return stdClass
+     * @return mixed|void
+     * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
     public function createRecord(array $array)
     {
@@ -179,9 +218,15 @@ class PowergateClient
 
     /**
      * Updates a record by ID with updated data from the given array.
-     * @param int $id The ID of the record of which to update.
-     * @param array $array Array of data of which to be updated.
-     * @return stdClass
+     *
+     * @param $id
+     * @param array $array
+     * @return mixed|void
+     * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
     public function updateRecord($id, array $array)
     {
@@ -197,8 +242,14 @@ class PowergateClient
 
     /**
      * Deletes a record from its ID.
-     * @param int $id The record ID as returned from the API.
-     * @return stdClass
+     *
+     * @param $id
+     * @return mixed|void
+     * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
+     * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
     public function deleteRecord($id)
     {
@@ -214,6 +265,7 @@ class PowergateClient
 
     /**
      * Generates a valid RFC1912 2.2 specific DNS Serial number or will increment if an existing one is provided otherwise a new one will be generated.
+     *
      * @param int $current Optional serial number of which will be automatically incremented if provided.
      * @return int
      * @throws SoaOutOfRangeException
@@ -234,27 +286,31 @@ class PowergateClient
 
     /**
      * Handles and dispatches Powergate client specific exceptions.
-     * @param  $ex Exception
-     * @param Guzzle\Http\Client $response
-     * @throws ValidationAPIException
-     * @throws UnauthorisedAccessAPIException
-     * @throws ResourceNotFoundAPIException
+     *
+     * @param ClientErrorResponseException|CurlException $exception
      * @throws ProxyAuthorisationAPIException
+     * @throws ResourceNotFoundAPIException
      * @throws ServerErrorException
+     * @throws UnauthorisedAccessAPIException
+     * @throws ValidationAPIException
      */
-    private function handleException(ClientErrorResponseException $exception)
+    private function handleException($exception)
     {
-        switch ($exception->getResponse()->getStatusCode()) {
-            case 400:
-                throw new ValidationAPIException;
-            case 401:
-                throw new UnauthorisedAccessAPIException;
-            case 404:
-                throw new ResourceNotFoundAPIException;
-            case 407:
-                throw new ProxyAuthorisationAPIException;
-            default :
-                throw new ServerErrorException($exception->getMessage());
+        if ($exception instanceof ClientErrorResponseException) {
+            switch ($exception->getResponse()->getStatusCode()) {
+                case 400:
+                    throw new ValidationAPIException;
+                case 401:
+                    throw new UnauthorisedAccessAPIException;
+                case 404:
+                    throw new ResourceNotFoundAPIException;
+                case 407:
+                    throw new ProxyAuthorisationAPIException;
+                default :
+                    throw new ServerErrorException($exception->getMessage());
+            }
+        } else {
+           throw new Exception($exception->getError(), $exception->getCode());
         }
     }
 
