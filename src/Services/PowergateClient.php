@@ -310,7 +310,7 @@ class PowergateClient
                     throw new ServerErrorException($exception->getMessage());
             }
         } else {
-            throw new $exception;
+           throw new Exception($exception->getError(), $exception->getCode());
         }
     }
 
